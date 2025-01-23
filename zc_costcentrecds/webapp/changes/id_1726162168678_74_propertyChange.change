@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1726162168678_74_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "zccostcentrecds",
+    "packageName": "",
+    "content": {
+        "property": "alwaysShowContentHeader",
+        "newValue": true
+    },
+    "selector": {
+        "id": "zccostcentrecds::sap.suite.ui.generic.template.ObjectPage.view.Details::ZC_CostCentreCDS--objectPage",
+        "idIsLocal": false,
+        "type": "sap.uxap.ObjectPageLayout"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/zccostcentrecds/changes/",
+    "projectId": "",
+    "creation": 1726162168678,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.96.20",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "0.0.1",
+        "to": "0.0.1",
+        "creation": "0.0.1"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}

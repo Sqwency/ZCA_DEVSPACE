@@ -1,0 +1,78 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/ZC_COSTCENTRECDS_CDS/$metadata">
+        <edmx:Include Namespace="ZC_COSTCENTRECDS_CDS" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="SAP.ZC_CostCentreCDSType">
+            <Annotation Term="UI.SelectionFields" >
+                <Collection>
+                    <PropertyPath>ControllingArea</PropertyPath>
+                    <PropertyPath>CostCentre</PropertyPath>
+                    <PropertyPath>Department</PropertyPath>
+                </Collection>   
+            </Annotation>
+
+            <Annotation Term="UI.Facets" >
+                <Collection>
+                    <Record Type="UI.ReferenceFacet">
+                        <PropertyValue Property="Target" AnnotationPath="@UI.LineItem"/>
+                        <PropertyValue Property="Label" String="Technical Data"/>
+                        <PropertyValue Property="ID" String="TechData"/>
+                    </Record>
+                </Collection>
+            </Annotation>
+
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="StandardHierarchyArea"/>
+                            <PropertyValue Property="Label" String="Hospodářské středisko"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CostCentre"/>
+                            <PropertyValue Property="Label" String="Nákladové středisko"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Department"/>
+                            <PropertyValue Property="Label" String="Zkratka útvaru"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Description"/>
+                            <PropertyValue Property="Label" String="Popis"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ID"/>
+                            <PropertyValue Property="Label" String="ID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue   Property="Value" Path="ValidDateFrom"/>
+                            <PropertyValue Property="Label" String="Platnost od:"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValidDateTo"/>
+                            <PropertyValue Property="Label" String="Platnost do:"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ControllingArea"/>
+                            <PropertyValue Property="Label" String="Nákladový okruh"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>  
+                            <PropertyValue Property="Label" String="Company Code"/>
+                        </Record> 
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP.ZC_CostCentreCDSType/ControllingArea">
+                <Annotation Term="Common.FilterDefaultValue" String="SKDA"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
