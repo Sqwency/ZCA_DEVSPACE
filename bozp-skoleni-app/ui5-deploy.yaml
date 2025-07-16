@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: cz.skoda.bozp.skoleni.bozpskoleniapp
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: GW2
+          url: http://smbgw2cs.sap.skoda.vwg:44320
+          client: '010'
+        app:
+          name: ZHR_BOZPZ_APP
+          description: BOZP Školení - Fiori aplikace pro správu školení
+          package: ZHR_BOZPZ
+          transport: GW2K924198
+        exclude:
+          - /test/

@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: zcaworkho
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: GW2
+          url: http://smbgw2cs.sap.skoda.vwg:44320
+          client: '010'
+        app:
+          name: ZCA_WORKHO
+          description: eDocházka
+          package: ZCA_DS
+          transport: GW2K923420
+        exclude:
+          - /test/

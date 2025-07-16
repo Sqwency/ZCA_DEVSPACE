@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZHR_BOZPZ_SRV" xml:lang="cs" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZAMESTNANEC" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Klient" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Osobní číslo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Jméno uživatele" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Nákl.středisko" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Příjmení" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Jméno" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Department" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Oddělení" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orgeh" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Org.jednotka" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orgtx" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Kr.text org.jednotky" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-mail.adresa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Telefon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SuperNo" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Osobní číslo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Supuname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Jméno uživatele" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Supnamelast" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Příjmení" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Supnamefirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Jméno" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Supemail" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-mail.adresa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mfa" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Č.kar.ev.přít." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToSkolitel" Relationship="ZHR_BOZPZ_SRV.ZamestnanecSkolitel" FromRole="FromRole_ZamestnanecSkolitel" ToRole="ToRole_ZamestnanecSkolitel"/>
+                <NavigationProperty Name="ToUcastnici" Relationship="ZHR_BOZPZ_SRV.ZamestnanecUcastnici" FromRole="FromRole_ZamestnanecUcastnici" ToRole="ToRole_ZamestnanecUcastnici"/>
+            </EntityType>
+            <EntityType Name="SKOLENI" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="IdSkoleni"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Klient" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdSkoleni" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nazev" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Typ" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DatumSkoleni" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Misto" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Skolitel" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Osobní číslo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SkoEmail" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-mail.adresa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SkoTel" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Telefon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PodpisSkolitel" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToSkolitel" Relationship="ZHR_BOZPZ_SRV.SkolitelSkoleni" FromRole="ToRole_SkolitelSkoleni" ToRole="FromRole_SkolitelSkoleni"/>
+                <NavigationProperty Name="ToDetail" Relationship="ZHR_BOZPZ_SRV.SkoleniSkoleniDetail" FromRole="FromRole_SkoleniSkoleniDetail" ToRole="ToRole_SkoleniSkoleniDetail"/>
+                <NavigationProperty Name="ToUcastnici" Relationship="ZHR_BOZPZ_SRV.SkoleniDetailUcastnici" FromRole="FromRole_SkoleniDetailUcastnici" ToRole="ToRole_SkoleniDetailUcastnici"/>
+                <NavigationProperty Name="ToPriloha" Relationship="ZHR_BOZPZ_SRV.SkoleniPriloha" FromRole="FromRole_SkoleniPriloha" ToRole="ToRole_SkoleniPriloha"/>
+            </EntityType>
+            <EntityType Name="PRILOHA" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="PrilohaId"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Klient" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PrilohaId" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PrilohaTyp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ArchivId" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ArcDocId" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SouborNazev" Type="Edm.String" Nullable="false" MaxLength="257" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SouborVelikost" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SouborTyp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Přípona souboru" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SouborMimetype" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="Mimetype souboru" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Podrobnosti" Type="Edm.String" Nullable="false" MaxLength="1000" sap:unicode="false" sap:label="Podrobnosti souboru" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SmlCislo" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Číslo smlouvy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Vytvoření - datum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crtime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Vytvoření - čas" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cruser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Vytvoření - uživatel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZhrIdSkol" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToSkoleni" Relationship="ZHR_BOZPZ_SRV.SkoleniPriloha" FromRole="ToRole_SkoleniPriloha" ToRole="FromRole_SkoleniPriloha"/>
+            </EntityType>
+            <EntityType Name="UCASTNICI" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="IdSkoleni"/>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Klient" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdSkoleni" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Osobní číslo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Jméno" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Příjmení" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oddeleni" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Oddělení" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Nákl.středisko" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToZamestnanec" Relationship="ZHR_BOZPZ_SRV.ZamestnanecUcastnici" FromRole="ToRole_ZamestnanecUcastnici" ToRole="FromRole_ZamestnanecUcastnici"/>
+                <NavigationProperty Name="ToDetail" Relationship="ZHR_BOZPZ_SRV.SkoleniDetailUcastnici" FromRole="ToRole_SkoleniDetailUcastnici" ToRole="FromRole_SkoleniDetailUcastnici"/>
+            </EntityType>
+            <EntityType Name="SKOLENI_DETAIL" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="IdSkoleni"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Klient" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdSkoleni" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ucastnik" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Osobní číslo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nazev" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Typ" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DatumSkoleni" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Misto" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Skolitel" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Osobní číslo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SkoEmail" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-mail.adresa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SkoTel" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Telefon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Podpis" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Podepsano_Dne" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToSkoleni" Relationship="ZHR_BOZPZ_SRV.SkoleniSkoleniDetail" FromRole="ToRole_SkoleniSkoleniDetail" ToRole="FromRole_SkoleniSkoleniDetail"/>
+                <NavigationProperty Name="ToSkolitel" Relationship="ZHR_BOZPZ_SRV.SkolitelSkoleniDetail" FromRole="ToRole_SkolitelSkoleniDetail" ToRole="FromRole_SkolitelSkoleniDetail"/>
+            </EntityType>
+            <EntityType Name="SKOLITEL" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Klient" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Osobní číslo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Jméno uživatele" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Nákl.středisko" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Příjmení" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Jméno" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Department" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Oddělení" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orgeh" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Org.jednotka" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orgtx" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Kr.text org.jednotky" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-mail.adresa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Telefon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mfa" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Č.kar.ev.přít." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToDetail" Relationship="ZHR_BOZPZ_SRV.SkolitelSkoleniDetail" FromRole="FromRole_SkolitelSkoleniDetail" ToRole="ToRole_SkolitelSkoleniDetail"/>
+                <NavigationProperty Name="ToZamestnanec" Relationship="ZHR_BOZPZ_SRV.ZamestnanecSkolitel" FromRole="ToRole_ZamestnanecSkolitel" ToRole="FromRole_ZamestnanecSkolitel"/>
+                <NavigationProperty Name="ToSkoleni" Relationship="ZHR_BOZPZ_SRV.SkolitelSkoleni" FromRole="FromRole_SkolitelSkoleni" ToRole="ToRole_SkolitelSkoleni"/>
+            </EntityType>
+            <Association Name="ZamestnanecUcastnici" sap:content-version="1">
+                <End Type="ZHR_BOZPZ_SRV.ZAMESTNANEC" Multiplicity="1" Role="FromRole_ZamestnanecUcastnici"/>
+                <End Type="ZHR_BOZPZ_SRV.UCASTNICI" Multiplicity="*" Role="ToRole_ZamestnanecUcastnici"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ZamestnanecUcastnici">
+                        <PropertyRef Name="Pernr"/>
+                        <PropertyRef Name="Mandt"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ZamestnanecUcastnici">
+                        <PropertyRef Name="Pernr"/>
+                        <PropertyRef Name="Mandt"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ZamestnanecSkolitel" sap:content-version="1">
+                <End Type="ZHR_BOZPZ_SRV.ZAMESTNANEC" Multiplicity="1" Role="FromRole_ZamestnanecSkolitel"/>
+                <End Type="ZHR_BOZPZ_SRV.SKOLITEL" Multiplicity="0..1" Role="ToRole_ZamestnanecSkolitel"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ZamestnanecSkolitel">
+                        <PropertyRef Name="Pernr"/>
+                        <PropertyRef Name="Mandt"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ZamestnanecSkolitel">
+                        <PropertyRef Name="Pernr"/>
+                        <PropertyRef Name="Mandt"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SkoleniSkoleniDetail" sap:content-version="1">
+                <End Type="ZHR_BOZPZ_SRV.SKOLENI" Multiplicity="1" Role="FromRole_SkoleniSkoleniDetail"/>
+                <End Type="ZHR_BOZPZ_SRV.SKOLENI_DETAIL" Multiplicity="1" Role="ToRole_SkoleniSkoleniDetail"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SkoleniSkoleniDetail">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="IdSkoleni"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SkoleniSkoleniDetail">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="IdSkoleni"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SkoleniDetailUcastnici" sap:content-version="1">
+                <End Type="ZHR_BOZPZ_SRV.SKOLENI" Multiplicity="1" Role="FromRole_SkoleniDetailUcastnici"/>
+                <End Type="ZHR_BOZPZ_SRV.UCASTNICI" Multiplicity="*" Role="ToRole_SkoleniDetailUcastnici"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SkoleniDetailUcastnici">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="IdSkoleni"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SkoleniDetailUcastnici">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="IdSkoleni"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SkoleniPriloha" sap:content-version="1">
+                <End Type="ZHR_BOZPZ_SRV.SKOLENI" Multiplicity="1" Role="FromRole_SkoleniPriloha"/>
+                <End Type="ZHR_BOZPZ_SRV.PRILOHA" Multiplicity="*" Role="ToRole_SkoleniPriloha"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SkoleniPriloha">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="IdSkoleni"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SkoleniPriloha">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="ZhrIdSkol"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SkolitelSkoleni" sap:content-version="1">
+                <End Type="ZHR_BOZPZ_SRV.SKOLITEL" Multiplicity="1" Role="FromRole_SkolitelSkoleni"/>
+                <End Type="ZHR_BOZPZ_SRV.SKOLENI" Multiplicity="*" Role="ToRole_SkolitelSkoleni"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SkolitelSkoleni">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="Pernr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SkolitelSkoleni">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="Skolitel"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SkolitelSkoleniDetail" sap:content-version="1">
+                <End Type="ZHR_BOZPZ_SRV.SKOLITEL" Multiplicity="1" Role="FromRole_SkolitelSkoleniDetail"/>
+                <End Type="ZHR_BOZPZ_SRV.SKOLENI_DETAIL" Multiplicity="*" Role="ToRole_SkolitelSkoleniDetail"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SkolitelSkoleniDetail">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="Pernr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SkolitelSkoleniDetail">
+                        <PropertyRef Name="Mandt"/>
+                        <PropertyRef Name="Skolitel"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZHR_BOZPZ_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZAMESTNANECSet" EntityType="ZHR_BOZPZ_SRV.ZAMESTNANEC" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SKOLENISet" EntityType="ZHR_BOZPZ_SRV.SKOLENI" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PRILOHYSet" EntityType="ZHR_BOZPZ_SRV.PRILOHA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="UCASTNICISet" EntityType="ZHR_BOZPZ_SRV.UCASTNICI" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SKOLENI_DETAILSet" EntityType="ZHR_BOZPZ_SRV.SKOLENI_DETAIL" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SKOLITELSet" EntityType="ZHR_BOZPZ_SRV.SKOLITEL" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="SkoleniDetailUcastniciSet" Association="ZHR_BOZPZ_SRV.SkoleniDetailUcastnici" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SKOLENISet" Role="FromRole_SkoleniDetailUcastnici"/>
+                    <End EntitySet="UCASTNICISet" Role="ToRole_SkoleniDetailUcastnici"/>
+                </AssociationSet>
+                <AssociationSet Name="SkoleniPrilohaSet" Association="ZHR_BOZPZ_SRV.SkoleniPriloha" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SKOLENISet" Role="FromRole_SkoleniPriloha"/>
+                    <End EntitySet="PRILOHYSet" Role="ToRole_SkoleniPriloha"/>
+                </AssociationSet>
+                <AssociationSet Name="SkolitelSkoleniDetailSet" Association="ZHR_BOZPZ_SRV.SkolitelSkoleniDetail" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SKOLITELSet" Role="FromRole_SkolitelSkoleniDetail"/>
+                    <End EntitySet="SKOLENI_DETAILSet" Role="ToRole_SkolitelSkoleniDetail"/>
+                </AssociationSet>
+                <AssociationSet Name="SkoleniSkoleniDetailSet" Association="ZHR_BOZPZ_SRV.SkoleniSkoleniDetail" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SKOLENISet" Role="FromRole_SkoleniSkoleniDetail"/>
+                    <End EntitySet="SKOLENI_DETAILSet" Role="ToRole_SkoleniSkoleniDetail"/>
+                </AssociationSet>
+                <AssociationSet Name="SkolitelSkoleniSet" Association="ZHR_BOZPZ_SRV.SkolitelSkoleni" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SKOLITELSet" Role="FromRole_SkolitelSkoleni"/>
+                    <End EntitySet="SKOLENISet" Role="ToRole_SkolitelSkoleni"/>
+                </AssociationSet>
+                <AssociationSet Name="ZamestnanecUcastniciSet" Association="ZHR_BOZPZ_SRV.ZamestnanecUcastnici" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZAMESTNANECSet" Role="FromRole_ZamestnanecUcastnici"/>
+                    <End EntitySet="UCASTNICISet" Role="ToRole_ZamestnanecUcastnici"/>
+                </AssociationSet>
+                <AssociationSet Name="ZamestnanecSkolitelSet" Association="ZHR_BOZPZ_SRV.ZamestnanecSkolitel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZAMESTNANECSet" Role="FromRole_ZamestnanecSkolitel"/>
+                    <End EntitySet="SKOLITELSet" Role="ToRole_ZamestnanecSkolitel"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="https://smbgw2cs.sap.skoda.vwg:44320/sap/opu/odata/sap/ZHR_BOZPZ_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://smbgw2cs.sap.skoda.vwg:44320/sap/opu/odata/sap/ZHR_BOZPZ_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
